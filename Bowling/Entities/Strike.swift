@@ -8,5 +8,5 @@
 import Foundation
 
 struct Strike: Frame {
-	
+	let balls: [Ball]
 }

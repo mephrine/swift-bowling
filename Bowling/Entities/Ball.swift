@@ -9,8 +9,4 @@ import Foundation
 
 struct Ball {
 	let knockedDownPin: Int
-	
-	var isStrike: Bool {
-		knockedDownPin == 10
-	}
 }

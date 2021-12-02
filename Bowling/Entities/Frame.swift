@@ -8,12 +8,12 @@
 import Foundation
 
 protocol Frame {
-	func score(of ball: Ball) -> Frame?
+	var balls: [Ball] { get }
+	func score(of ball: Ball) throws -> Frame
 }
 
 extension Frame {
-	func score(of ball: Ball) -> Frame? {
-		if ball.isStrike { return Strike() }
-		return nil
+	func score(of ball: Ball) throws -> Frame {
+		return self
 	}
 }
