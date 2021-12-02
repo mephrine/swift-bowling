@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		51C1D340275910E600252C73 /* Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C1D33F275910E600252C73 /* Frame.swift */; };
+		51C1D342275910EF00252C73 /* NormalFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C1D341275910EF00252C73 /* NormalFrame.swift */; };
+		51C1D344275910FC00252C73 /* Strike.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C1D343275910FC00252C73 /* Strike.swift */; };
+		51C1D3462759111E00252C73 /* Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C1D33F275910E600252C73 /* Frame.swift */; };
+		51C1D3472759112000252C73 /* Strike.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C1D343275910FC00252C73 /* Strike.swift */; };
+		51C1D3482759112300252C73 /* NormalFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C1D341275910EF00252C73 /* NormalFrame.swift */; };
+		51C1D34A275913E000252C73 /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C1D349275913E000252C73 /* Ball.swift */; };
+		51C1D34B2759178C00252C73 /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C1D349275913E000252C73 /* Ball.swift */; };
 		88C8B84227572DCE009DA032 /* BowlingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C8B84127572DCE009DA032 /* BowlingTest.swift */; };
 		C7640416274F2F5100A223B5 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7640415274F2F5100A223B5 /* main.swift */; };
 /* End PBXBuildFile section */
@@ -24,6 +32,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		51C1D33F275910E600252C73 /* Frame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Frame.swift; sourceTree = "<group>"; };
+		51C1D341275910EF00252C73 /* NormalFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalFrame.swift; sourceTree = "<group>"; };
+		51C1D343275910FC00252C73 /* Strike.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strike.swift; sourceTree = "<group>"; };
+		51C1D349275913E000252C73 /* Ball.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
 		88C8B83F27572DCE009DA032 /* BowlingTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BowlingTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		88C8B84127572DCE009DA032 /* BowlingTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BowlingTest.swift; sourceTree = "<group>"; };
 		C7640412274F2F5100A223B5 /* Bowling */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Bowling; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,6 +60,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		51C1D3452759110000252C73 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				51C1D343275910FC00252C73 /* Strike.swift */,
+				51C1D33F275910E600252C73 /* Frame.swift */,
+				51C1D341275910EF00252C73 /* NormalFrame.swift */,
+				51C1D349275913E000252C73 /* Ball.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
 		88C8B84027572DCE009DA032 /* BowlingTest */ = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +100,7 @@
 		C7640414274F2F5100A223B5 /* Bowling */ = {
 			isa = PBXGroup;
 			children = (
+				51C1D3452759110000252C73 /* Entities */,
 				C7640415274F2F5100A223B5 /* main.swift */,
 			);
 			path = Bowling;
@@ -171,7 +195,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51C1D3482759112300252C73 /* NormalFrame.swift in Sources */,
 				88C8B84227572DCE009DA032 /* BowlingTest.swift in Sources */,
+				51C1D34B2759178C00252C73 /* Ball.swift in Sources */,
+				51C1D3472759112000252C73 /* Strike.swift in Sources */,
+				51C1D3462759111E00252C73 /* Frame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,6 +208,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7640416274F2F5100A223B5 /* main.swift in Sources */,
+				51C1D344275910FC00252C73 /* Strike.swift in Sources */,
+				51C1D34A275913E000252C73 /* Ball.swift in Sources */,
+				51C1D340275910E600252C73 /* Frame.swift in Sources */,
+				51C1D342275910EF00252C73 /* NormalFrame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

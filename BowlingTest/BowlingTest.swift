@@ -10,6 +10,6 @@ import XCTest
 class BowlingTest: XCTestCase {
   func test_shouldBeStrikeWhenAllThePinsKnockedDownOnTheFirstBall() throws {
 		let frame: Frame = NormalFrame()
-		XCTAssertEqual(frame.score(pins: 10), Strike())
+		XCTAssertTrue(frame.score(of: Ball(knockedDownPin: 10) ) is Strike)
   }
 }
