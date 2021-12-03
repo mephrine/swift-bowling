@@ -19,4 +19,11 @@ class BowlingTest: XCTestCase {
 		
 		XCTAssertTrue(try secondFrame.score(of: Ball(knockedDownPin: 3)) is Spare)
 	}
+	
+	func test_shouldBeMissWhenAllThePinsnNotKnockedDownOnTheSecondBall() throws {
+		let firstFrame: Frame = NormalFrame()
+		let secondFrame = try firstFrame.score(of: Ball(knockedDownPin: 6))
+		
+		XCTAssertTrue(try secondFrame.score(of: Ball(knockedDownPin: 3)) is Miss)
+	}
 }
