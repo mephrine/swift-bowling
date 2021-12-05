@@ -64,7 +64,7 @@ NEXTSTEP with yagom-academy
     - [x] 프레임의 첫번째 투구에서 모든 핀을 쓰러트리면 Strike
     - [x] 프레임의 두번째 투구에서 모든 핀을 쓰러트리면 Spare
     - [x] 프레임의 두번째 투구에서도 모든 핀이 쓰러지않으면 Miss
-    - [ ] 핀을 하나도 쓰러트리지 못하면 Gutter
+    - [x] 핀을 하나도 쓰러트리지 못하면 Gutter
 
 <br>
 
