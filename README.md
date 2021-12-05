@@ -69,8 +69,8 @@ NEXTSTEP with yagom-academy
 <br>
 
 - NormalFrame
-    - [ ] 2개의 Bowl를 갖는다.
-    - [ ] 2번의 투구를 하면 다음 프레임을 생성한다.
+    - [x] Bowl를 갖는다.
+    - [x] 2번의 투구를 하면 다음 프레임을 생성한다.
 
 <br>
 
