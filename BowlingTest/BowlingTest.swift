@@ -26,4 +26,11 @@ class BowlingTest: XCTestCase {
 		
 		XCTAssertTrue(try secondFrame.score(of: Ball(knockedDownPin: 3)) is Miss)
 	}
+	
+	func test_shouldBeGutterWhenNoneOfThePinsnNotingKnockedDown() throws {
+		let firstFrame: Frame = NormalFrame()
+		let secondFrame = try firstFrame.score(of: Ball(knockedDownPin: 0))
+		
+		XCTAssertTrue(try secondFrame.score(of: Ball(knockedDownPin: 0)) is Gutter)
+	}
 }
