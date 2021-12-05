@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		51B296F9275CF567008AA79A /* Gutter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B296F8275CF567008AA79A /* Gutter.swift */; };
 		51B296FA275CF5FC008AA79A /* Gutter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B296F8275CF567008AA79A /* Gutter.swift */; };
+		51B296FC275D0397008AA79A /* BowlingGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B296FB275D0397008AA79A /* BowlingGame.swift */; };
+		51B296FD275D03A6008AA79A /* BowlingGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B296FB275D0397008AA79A /* BowlingGame.swift */; };
 		51B2AF56275A79F800A2640F /* Miss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B2AF55275A79F800A2640F /* Miss.swift */; };
 		51B2AF57275A7A0300A2640F /* Miss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B2AF55275A79F800A2640F /* Miss.swift */; };
 		51B2AF5A275A7D6E00A2640F /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B2AF59275A7D6E00A2640F /* Array+Extension.swift */; };
@@ -43,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		51B296F8275CF567008AA79A /* Gutter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gutter.swift; sourceTree = "<group>"; };
+		51B296FB275D0397008AA79A /* BowlingGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BowlingGame.swift; sourceTree = "<group>"; };
 		51B2AF55275A79F800A2640F /* Miss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Miss.swift; sourceTree = "<group>"; };
 		51B2AF59275A7D6E00A2640F /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		51C1D33F275910E600252C73 /* Frame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Frame.swift; sourceTree = "<group>"; };
@@ -138,6 +141,7 @@
 				51C1D34F27591B7100252C73 /* Options */,
 				51C1D3452759110000252C73 /* Entities */,
 				C7640415274F2F5100A223B5 /* main.swift */,
+				51B296FB275D0397008AA79A /* BowlingGame.swift */,
 			);
 			path = Bowling;
 			sourceTree = "<group>";
@@ -240,6 +244,7 @@
 				51B296FA275CF5FC008AA79A /* Gutter.swift in Sources */,
 				51C1D3472759112000252C73 /* Strike.swift in Sources */,
 				51C1D3462759111E00252C73 /* Frame.swift in Sources */,
+				51B296FD275D03A6008AA79A /* BowlingGame.swift in Sources */,
 				51C1D35227591B7E00252C73 /* BowlingOption.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,6 +262,7 @@
 				51B296F9275CF567008AA79A /* Gutter.swift in Sources */,
 				51C1D340275910E600252C73 /* Frame.swift in Sources */,
 				51C1D342275910EF00252C73 /* NormalFrame.swift in Sources */,
+				51B296FC275D0397008AA79A /* BowlingGame.swift in Sources */,
 				51C1D35127591B7C00252C73 /* BowlingOption.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

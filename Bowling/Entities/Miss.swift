@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct Miss: Frame {
+struct Miss: Finished {
 	let balls: [Ball]
 }

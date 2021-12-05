@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct Gutter: Frame {
+struct Gutter: Finished {
 	let balls: [Ball]
 }

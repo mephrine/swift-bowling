@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct Spare: Frame {
+struct Spare: Finished {
 	let balls: [Ball]
 }

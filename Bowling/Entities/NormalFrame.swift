@@ -7,7 +7,7 @@
 
 import Foundation
 
-class NormalFrame: Frame {
+class NormalFrame: Running {
 	let balls: [Ball]
 	
 	init(balls: [Ball] = []) {

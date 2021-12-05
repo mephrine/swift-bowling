@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct Strike: Frame {
+struct Strike: Finished {
 	let balls: [Ball]
 }
