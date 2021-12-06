@@ -41,4 +41,13 @@ class BowlingTest: XCTestCase {
 		
 		XCTAssertTrue(bowlingGame.frames.count == 2)
 	}
+	
+	func test_shouldBeFinalFrameWhenFrame9Ends() throws {
+		let bowlingGame = BowlingGame()
+		for _ in 0 ..< 9 {
+			bowlingGame.play(with: Ball(knockedDownPin: 10))
+		}
+		
+		XCTAssertTrue(bowlingGame.frames.last is FinalFrame)
+	}
 }
