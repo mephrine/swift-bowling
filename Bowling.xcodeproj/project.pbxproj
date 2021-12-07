@@ -27,6 +27,8 @@
 		51C1D34E27591AAE00252C73 /* Spare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C1D34C27591AA800252C73 /* Spare.swift */; };
 		51C1D35127591B7C00252C73 /* BowlingOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C1D35027591B7C00252C73 /* BowlingOption.swift */; };
 		51C1D35227591B7E00252C73 /* BowlingOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C1D35027591B7C00252C73 /* BowlingOption.swift */; };
+		51C6C63A275E406D001AB36C /* FinalFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C6C639275E406D001AB36C /* FinalFrame.swift */; };
+		51C6C63B275E47C4001AB36C /* FinalFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C6C639275E406D001AB36C /* FinalFrame.swift */; };
 		88C8B84227572DCE009DA032 /* BowlingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C8B84127572DCE009DA032 /* BowlingTest.swift */; };
 		C7640416274F2F5100A223B5 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7640415274F2F5100A223B5 /* main.swift */; };
 /* End PBXBuildFile section */
@@ -54,6 +56,7 @@
 		51C1D349275913E000252C73 /* Ball.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
 		51C1D34C27591AA800252C73 /* Spare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spare.swift; sourceTree = "<group>"; };
 		51C1D35027591B7C00252C73 /* BowlingOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BowlingOption.swift; sourceTree = "<group>"; };
+		51C6C639275E406D001AB36C /* FinalFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalFrame.swift; sourceTree = "<group>"; };
 		88C8B83F27572DCE009DA032 /* BowlingTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BowlingTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		88C8B84127572DCE009DA032 /* BowlingTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BowlingTest.swift; sourceTree = "<group>"; };
 		C7640412274F2F5100A223B5 /* Bowling */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Bowling; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,13 +92,9 @@
 		51C1D3452759110000252C73 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				51C1D343275910FC00252C73 /* Strike.swift */,
-				51C1D33F275910E600252C73 /* Frame.swift */,
-				51C1D341275910EF00252C73 /* NormalFrame.swift */,
+				51C6C637275E3FCE001AB36C /* Frames */,
+				51C6C638275E3FE5001AB36C /* States */,
 				51C1D349275913E000252C73 /* Ball.swift */,
-				51C1D34C27591AA800252C73 /* Spare.swift */,
-				51B2AF55275A79F800A2640F /* Miss.swift */,
-				51B296F8275CF567008AA79A /* Gutter.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -106,6 +105,27 @@
 				51C1D35027591B7C00252C73 /* BowlingOption.swift */,
 			);
 			path = Options;
+			sourceTree = "<group>";
+		};
+		51C6C637275E3FCE001AB36C /* Frames */ = {
+			isa = PBXGroup;
+			children = (
+				51C1D33F275910E600252C73 /* Frame.swift */,
+				51C1D341275910EF00252C73 /* NormalFrame.swift */,
+				51C6C639275E406D001AB36C /* FinalFrame.swift */,
+			);
+			path = Frames;
+			sourceTree = "<group>";
+		};
+		51C6C638275E3FE5001AB36C /* States */ = {
+			isa = PBXGroup;
+			children = (
+				51C1D343275910FC00252C73 /* Strike.swift */,
+				51C1D34C27591AA800252C73 /* Spare.swift */,
+				51B2AF55275A79F800A2640F /* Miss.swift */,
+				51B296F8275CF567008AA79A /* Gutter.swift */,
+			);
+			path = States;
 			sourceTree = "<group>";
 		};
 		88C8B84027572DCE009DA032 /* BowlingTest */ = {
@@ -235,6 +255,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51C6C63B275E47C4001AB36C /* FinalFrame.swift in Sources */,
 				51C1D3482759112300252C73 /* NormalFrame.swift in Sources */,
 				51B2AF57275A7A0300A2640F /* Miss.swift in Sources */,
 				51C1D34E27591AAE00252C73 /* Spare.swift in Sources */,
@@ -253,6 +274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51C6C63A275E406D001AB36C /* FinalFrame.swift in Sources */,
 				C7640416274F2F5100A223B5 /* main.swift in Sources */,
 				51B2AF56275A79F800A2640F /* Miss.swift in Sources */,
 				51C1D34D27591AA800252C73 /* Spare.swift in Sources */,

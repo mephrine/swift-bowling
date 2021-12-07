@@ -11,6 +11,7 @@ protocol Frame {
 	var balls: [Ball] { get }
 	var isFinished: Bool { get }
 	func score(of ball: Ball) throws -> Frame
+	static func makeNewFrame(from currentframe: Frame, balls: [Ball]) -> Self
 }
 
 extension Frame {
@@ -27,7 +28,3 @@ extension Running {
 }
 
 protocol Finished: Frame {}
-
-extension Finished {
-	var isFinished: Bool { true }
-}

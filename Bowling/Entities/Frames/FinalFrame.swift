@@ -1,13 +1,13 @@
 //
-//  NormalFrame.swift
+//  FinalFrame.swift
 //  Bowling
 //
-//  Created by Mephrine on 2021/12/02.
+//  Created by Mephrine on 2021/12/06.
 //
 
 import Foundation
 
-class NormalFrame: Running {
+struct FinalFrame: Running {
 	let balls: [Ball]
 	
 	init(balls: [Ball] = []) {
@@ -16,14 +16,16 @@ class NormalFrame: Running {
 	
 	func score(of ball: Ball) throws -> Frame {
 		let balls = self.balls + [ball]
-		if balls.isStrike { return Strike(balls: balls) }
-		if balls.isSpare { return Spare(balls: balls) }
-		if balls.isMiss { return Miss(balls: balls) }
-		if balls.isGutter { return Gutter(balls: balls) }
-		return NormalFrame(balls: balls)
+		if balls.isStrike { return Strike.makeNewFrame(from: self, balls: balls) }
+		if balls.isSpare { return Spare.makeNewFrame(from: self, balls: balls) }
+		if balls.isMiss { return Miss.makeNewFrame(from: self, balls: balls) }
+		if balls.isGutter { return Gutter.makeNewFrame(from: self, balls: balls) }
+		return Self.makeNewFrame(from: self, balls: balls)
 	}
 	
-
+	static func makeNewFrame(from currentframe: Frame, balls: [Ball]) -> FinalFrame {
+		return FinalFrame(balls: balls)
+	}
 }
 
 fileprivate extension Array where Element == Ball {
@@ -65,3 +67,4 @@ fileprivate extension Array where Element == Ball {
 		self[safe: 1] != nil
 	}
 }
+

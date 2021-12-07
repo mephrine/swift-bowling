@@ -12,9 +12,9 @@ final class BowlingGame {
 	
 	func play(with ball: Ball) {
 		do {
-			guard let currentFrame = try frames.last?.score(of: Ball(knockedDownPin: 0)) else {	return }
+			guard let currentFrame = try frames.last?.score(of: ball) else {	return }
 			changeCurrentFrameTo(currentFrame)
-			if currentFrame.isFinished { frames.append(NormalFrame()) }
+			if currentFrame.isFinished { makeNewFrame() }
 		} catch {
 			fatalError("Ball is invalid")
 		}
@@ -22,5 +22,13 @@ final class BowlingGame {
 	
 	private func changeCurrentFrameTo(_ frame: Frame) {
 		self.frames[frames.count - 1] = frame
+	}
+	
+	private func makeNewFrame() {
+		frames.append(isLastFrame ? FinalFrame() : NormalFrame())
+	}
+	
+	private var isLastFrame: Bool {
+		frames.count == 9
 	}
 }
