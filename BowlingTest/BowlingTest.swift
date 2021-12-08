@@ -43,11 +43,34 @@ class BowlingTest: XCTestCase {
 	}
 	
 	func test_shouldBeFinalFrameWhenFrame9Ends() throws {
+		let bowlingGame = makeBowlingGameOfFinalFrame()
+		
+		XCTAssertTrue(bowlingGame.frames.last is FinalFrame)
+	}
+	
+	func test_shouldGet3BallsWhenFinalFrameContainsStrikeOrSpare() throws {
+		var bowlingGame = makeBowlingGameOfFinalFrame()
+		
+		bowlingGame.play(with: Ball(knockedDownPin: 10))
+		bowlingGame.play(with: Ball(knockedDownPin: 10))
+		bowlingGame.play(with: Ball(knockedDownPin: 10))
+		
+		XCTAssertTrue(bowlingGame.frames.last?.balls.count == 3)
+		
+		bowlingGame = makeBowlingGameOfFinalFrame()
+		
+		bowlingGame.play(with: Ball(knockedDownPin: 1))
+		bowlingGame.play(with: Ball(knockedDownPin: 9))
+		bowlingGame.play(with: Ball(knockedDownPin: 1))
+		
+		XCTAssertTrue(bowlingGame.frames.last?.balls.count == 3)
+	}
+	
+	private func makeBowlingGameOfFinalFrame() -> BowlingGame {
 		let bowlingGame = BowlingGame()
 		for _ in 0 ..< 9 {
 			bowlingGame.play(with: Ball(knockedDownPin: 10))
 		}
-		
-		XCTAssertTrue(bowlingGame.frames.last is FinalFrame)
+		return bowlingGame
 	}
 }
