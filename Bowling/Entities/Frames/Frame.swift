@@ -16,7 +16,8 @@ protocol Frame {
 
 extension Frame {
 	func score(of ball: Ball) throws -> Frame {
-		return self
+		let balls = self.balls + [ball]
+		return Self.makeNewFrame(from: self, balls: balls)
 	}
 }
 
