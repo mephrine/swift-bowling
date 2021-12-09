@@ -75,8 +75,7 @@ NEXTSTEP with yagom-academy
 <br>
 
 - FinalFrame
-    - [ ] 3개의 Bowl를 갖는다.
-    - [ ] Strike or Spare면 3번째 투구를 한다.
+    - [x] Strike or Spare면 3번째 투구를 한다.
     - [ ] 모든 투구가 끝나면 게임 종료
 
 <br>
