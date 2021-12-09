@@ -8,10 +8,10 @@
 import XCTest
 
 class BowlingTest: XCTestCase {
-  func test_shouldBeStrikeWhenAllThePinsKnockedDownOnTheFirstBall() throws {
+	func test_shouldBeStrikeWhenAllThePinsKnockedDownOnTheFirstBall() throws {
 		let frame = NormalFrame()
 		XCTAssertTrue(try frame.score(of: Ball(knockedDownPin: 10)) is Strike)
-  }
+	}
 	
 	func test_shouldBeSpareWhenAllThePinsKnockedDownOnTheSecondBall() throws {
 		let firstBall: Frame = NormalFrame()
@@ -64,6 +64,34 @@ class BowlingTest: XCTestCase {
 		bowlingGame.play(with: Ball(knockedDownPin: 1))
 		
 		XCTAssertTrue(bowlingGame.frames.last?.balls.count == 3)
+	}
+	
+	func test_shouldThrowErrorWhenTheInputNameIsInvalid() {
+		var bowlingGame = makeStubBowlingGame(byName: "a")
+		XCTAssertThrowsError(bowlingGame.start()) { error in
+			XCTAssertEqual(error, BowlingError.invalidName)
+		}
+		
+		bowlingGame = makeStubBowlingGame(byName: "")
+		XCTAssertThrowsError(bowlingGame.start()) { error in
+			XCTAssertEqual(error, BowlingError.invalidName)
+		}
+		
+		bowlingGame = makeStubBowlingGame(byName: nil)
+		XCTAssertThrowsError(bowlingGame.start()) { error in
+			XCTAssertEqual(error, BowlingError.invalidName)
+		}
+		
+		bowlingGame = makeStubBowlingGame(byName: "abcd")
+		XCTAssertThrowsError(bowlingGame.start()) { error in
+			XCTAssertEqual(error, BowlingError.invalidName)
+		}
+	}
+	
+	private func makeStubBowlingGame(byName name: String?) -> BowlingGame {
+		let inputView = StubInputView(name: name)
+		var bowlingGame = BowlingGame(inputView: inputView)
+		return bowlingGame
 	}
 	
 	private func makeBowlingGameOfFinalFrame() -> BowlingGame {
