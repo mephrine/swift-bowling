@@ -9,6 +9,17 @@ import Foundation
 
 final class BowlingGame {
 	private(set) var frames: [Frame] = [NormalFrame()]
+	let inputView: Inputtable
+	var playerName = ""
+	
+	init(inputView: Inputtable) {
+		self.inputView = inputView
+		
+	}
+	
+	func enterGame() throws {
+		playerName = try inputView.inputed().name
+	}
 	
 	func play(with ball: Ball) {
 		do {

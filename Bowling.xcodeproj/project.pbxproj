@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		51A5FBE8276247F500B7D4BA /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A5FBE7276247F500B7D4BA /* InputView.swift */; };
+		51A5FBEB27624B9E00B7D4BA /* BowlingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A5FBEA27624B9E00B7D4BA /* BowlingError.swift */; };
+		51A5FBEC27624BB600B7D4BA /* BowlingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A5FBEA27624B9E00B7D4BA /* BowlingError.swift */; };
+		51A5FBEE27624CBA00B7D4BA /* InputName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A5FBED27624CBA00B7D4BA /* InputName.swift */; };
+		51A5FBEF27624D2E00B7D4BA /* InputName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A5FBED27624CBA00B7D4BA /* InputName.swift */; };
+		51A5FBF127624F6C00B7D4BA /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A5FBE7276247F500B7D4BA /* InputView.swift */; };
+		51A5FBF42762513600B7D4BA /* StubInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A5FBF32762513600B7D4BA /* StubInputView.swift */; };
 		51B296F9275CF567008AA79A /* Gutter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B296F8275CF567008AA79A /* Gutter.swift */; };
 		51B296FA275CF5FC008AA79A /* Gutter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B296F8275CF567008AA79A /* Gutter.swift */; };
 		51B296FC275D0397008AA79A /* BowlingGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B296FB275D0397008AA79A /* BowlingGame.swift */; };
@@ -46,6 +53,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		51A5FBE7276247F500B7D4BA /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		51A5FBEA27624B9E00B7D4BA /* BowlingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BowlingError.swift; sourceTree = "<group>"; };
+		51A5FBED27624CBA00B7D4BA /* InputName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputName.swift; sourceTree = "<group>"; };
+		51A5FBF32762513600B7D4BA /* StubInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubInputView.swift; sourceTree = "<group>"; };
 		51B296F8275CF567008AA79A /* Gutter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gutter.swift; sourceTree = "<group>"; };
 		51B296FB275D0397008AA79A /* BowlingGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BowlingGame.swift; sourceTree = "<group>"; };
 		51B2AF55275A79F800A2640F /* Miss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Miss.swift; sourceTree = "<group>"; };
@@ -81,6 +92,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		51A5FBE6276247E800B7D4BA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				51A5FBE7276247F500B7D4BA /* InputView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		51A5FBE927624B9300B7D4BA /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				51A5FBEA27624B9E00B7D4BA /* BowlingError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
+		51A5FBF22762512D00B7D4BA /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				51A5FBF32762513600B7D4BA /* StubInputView.swift */,
+			);
+			path = Stubs;
+			sourceTree = "<group>";
+		};
 		51B2AF58275A7D4200A2640F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +130,7 @@
 				51C6C637275E3FCE001AB36C /* Frames */,
 				51C6C638275E3FE5001AB36C /* States */,
 				51C1D349275913E000252C73 /* Ball.swift */,
+				51A5FBED27624CBA00B7D4BA /* InputName.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -131,6 +167,7 @@
 		88C8B84027572DCE009DA032 /* BowlingTest */ = {
 			isa = PBXGroup;
 			children = (
+				51A5FBF22762512D00B7D4BA /* Stubs */,
 				88C8B84127572DCE009DA032 /* BowlingTest.swift */,
 			);
 			path = BowlingTest;
@@ -157,6 +194,8 @@
 		C7640414274F2F5100A223B5 /* Bowling */ = {
 			isa = PBXGroup;
 			children = (
+				51A5FBE927624B9300B7D4BA /* Errors */,
+				51A5FBE6276247E800B7D4BA /* Views */,
 				51B2AF58275A7D4200A2640F /* Extensions */,
 				51C1D34F27591B7100252C73 /* Options */,
 				51C1D3452759110000252C73 /* Entities */,
@@ -258,13 +297,17 @@
 				51C6C63B275E47C4001AB36C /* FinalFrame.swift in Sources */,
 				51C1D3482759112300252C73 /* NormalFrame.swift in Sources */,
 				51B2AF57275A7A0300A2640F /* Miss.swift in Sources */,
+				51A5FBEF27624D2E00B7D4BA /* InputName.swift in Sources */,
 				51C1D34E27591AAE00252C73 /* Spare.swift in Sources */,
 				51B2AF5B275A7DAE00A2640F /* Array+Extension.swift in Sources */,
+				51A5FBEC27624BB600B7D4BA /* BowlingError.swift in Sources */,
+				51A5FBF42762513600B7D4BA /* StubInputView.swift in Sources */,
 				88C8B84227572DCE009DA032 /* BowlingTest.swift in Sources */,
 				51C1D34B2759178C00252C73 /* Ball.swift in Sources */,
 				51B296FA275CF5FC008AA79A /* Gutter.swift in Sources */,
 				51C1D3472759112000252C73 /* Strike.swift in Sources */,
 				51C1D3462759111E00252C73 /* Frame.swift in Sources */,
+				51A5FBF127624F6C00B7D4BA /* InputView.swift in Sources */,
 				51B296FD275D03A6008AA79A /* BowlingGame.swift in Sources */,
 				51C1D35227591B7E00252C73 /* BowlingOption.swift in Sources */,
 			);
@@ -274,12 +317,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51A5FBE8276247F500B7D4BA /* InputView.swift in Sources */,
 				51C6C63A275E406D001AB36C /* FinalFrame.swift in Sources */,
+				51A5FBEE27624CBA00B7D4BA /* InputName.swift in Sources */,
 				C7640416274F2F5100A223B5 /* main.swift in Sources */,
 				51B2AF56275A79F800A2640F /* Miss.swift in Sources */,
 				51C1D34D27591AA800252C73 /* Spare.swift in Sources */,
 				51B2AF5A275A7D6E00A2640F /* Array+Extension.swift in Sources */,
 				51C1D344275910FC00252C73 /* Strike.swift in Sources */,
+				51A5FBEB27624B9E00B7D4BA /* BowlingError.swift in Sources */,
 				51C1D34A275913E000252C73 /* Ball.swift in Sources */,
 				51B296F9275CF567008AA79A /* Gutter.swift in Sources */,
 				51C1D340275910E600252C73 /* Frame.swift in Sources */,

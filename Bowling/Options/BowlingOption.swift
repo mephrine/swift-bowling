@@ -9,4 +9,5 @@ import Foundation
 
 enum BowlingOption {
 	static let numberOfPins = 10
+	static let numberOfNames = 3
 }

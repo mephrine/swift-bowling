@@ -35,7 +35,8 @@ class BowlingTest: XCTestCase {
 	}
 	
 	func test_shouldBeFrame2WhenFrame1Ends() throws {
-		let bowlingGame = BowlingGame()
+		let inputView = StubInputView(name: "abc")
+		let bowlingGame = BowlingGame(inputView: inputView)
 		bowlingGame.play(with: Ball(knockedDownPin: 0))
 		bowlingGame.play(with: Ball(knockedDownPin: 0))
 		
@@ -66,36 +67,37 @@ class BowlingTest: XCTestCase {
 		XCTAssertTrue(bowlingGame.frames.last?.balls.count == 3)
 	}
 	
-	func test_shouldThrowErrorWhenTheInputNameIsInvalid() {
+	func test_shouldThrowErrorWhenTheInputNameIsInvalid() throws {
 		var bowlingGame = makeStubBowlingGame(byName: "a")
-		XCTAssertThrowsError(bowlingGame.start()) { error in
-			XCTAssertEqual(error, BowlingError.invalidName)
+		XCTAssertThrowsError(try bowlingGame.enterGame()) { error in
+			XCTAssertEqual(error as! BowlingError, BowlingError.invalidName)
 		}
 		
 		bowlingGame = makeStubBowlingGame(byName: "")
-		XCTAssertThrowsError(bowlingGame.start()) { error in
-			XCTAssertEqual(error, BowlingError.invalidName)
+		XCTAssertThrowsError(try bowlingGame.enterGame()) { error in
+			XCTAssertEqual(error as! BowlingError, BowlingError.invalidName)
 		}
 		
 		bowlingGame = makeStubBowlingGame(byName: nil)
-		XCTAssertThrowsError(bowlingGame.start()) { error in
-			XCTAssertEqual(error, BowlingError.invalidName)
+		XCTAssertThrowsError(try bowlingGame.enterGame()) { error in
+			XCTAssertEqual(error as! BowlingError, BowlingError.invalidName)
 		}
 		
 		bowlingGame = makeStubBowlingGame(byName: "abcd")
-		XCTAssertThrowsError(bowlingGame.start()) { error in
-			XCTAssertEqual(error, BowlingError.invalidName)
+		XCTAssertThrowsError(try bowlingGame.enterGame()) { error in
+			XCTAssertEqual(error as! BowlingError, BowlingError.invalidName)
 		}
 	}
 	
 	private func makeStubBowlingGame(byName name: String?) -> BowlingGame {
 		let inputView = StubInputView(name: name)
-		var bowlingGame = BowlingGame(inputView: inputView)
+		let bowlingGame = BowlingGame(inputView: inputView)
 		return bowlingGame
 	}
 	
 	private func makeBowlingGameOfFinalFrame() -> BowlingGame {
-		let bowlingGame = BowlingGame()
+		let inputView = StubInputView(name: "ab")
+		let bowlingGame = BowlingGame(inputView: inputView)
 		for _ in 0 ..< 9 {
 			bowlingGame.play(with: Ball(knockedDownPin: 10))
 		}
