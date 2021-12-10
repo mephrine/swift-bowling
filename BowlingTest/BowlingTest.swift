@@ -89,8 +89,25 @@ class BowlingTest: XCTestCase {
 		}
 	}
 	
-	private func makeStubBowlingGame(byName name: String?) -> BowlingGame {
-		let inputView = StubInputView(name: name)
+	func test_shouldThrowErrorWhenTheInputBallIsInvalid() throws {
+		var bowlingGame = makeStubBowlingGame(byName: "abc", balls: [Ball(knockedDownPin: "-1")])
+		XCTAssertThrowsError(try bowlingGame.enterGame()) { error in
+			XCTAssertEqual(error as! BowlingError, BowlingError.invalidBall)
+		}
+		
+		bowlingGame = makeStubBowlingGame(byName: "abc", balls: [Ball(knockedDownPin: "a")])
+		XCTAssertThrowsError(try bowlingGame.enterGame()) { error in
+			XCTAssertEqual(error as! BowlingError, BowlingError.invalidBall)
+		}
+		
+		bowlingGame = makeStubBowlingGame(byName: "abc", balls: [Ball(knockedDownPin: "11")])
+		XCTAssertThrowsError(try bowlingGame.enterGame()) { error in
+			XCTAssertEqual(error as! BowlingError, BowlingError.invalidBall)
+		}
+	}
+	
+	private func makeStubBowlingGame(byName name: String?, balls: [Ball] = []) -> BowlingGame {
+		let inputView = StubInputView(name: name, balls: balls)
 		let bowlingGame = BowlingGame(inputView: inputView)
 		return bowlingGame
 	}
