@@ -8,13 +8,19 @@
 import Foundation
 
 protocol Inputtable {
-	func inputed() throws -> InputName
+	func inputedName() throws -> InputName
 	func makeInputName() throws -> InputName
+	func inputedBall() throws -> Ball
+	func makeBall() throws -> Ball
 }
 
 extension Inputtable {
-	func inputed() throws -> InputName {
+	func inputedName() throws -> InputName {
 		return try makeInputName()
+	}
+	
+	func inputedBall() throws -> Ball {
+		return try makeBall()
 	}
 }
 
@@ -22,5 +28,9 @@ struct InputView: Inputtable {
 	func makeInputName() throws -> InputName {
 		print("플레이어 이름은(3 english letters)?:")
 		return try InputName(name: readLine())
+	}
+	
+	func makeBall() throws -> Ball {
+		return try Ball(knockedDownPin: readLine())
 	}
 }

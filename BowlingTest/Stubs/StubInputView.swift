@@ -9,12 +9,18 @@ import Foundation
 
 final class StubInputView: Inputtable {
 	let name: String?
+	var balls: [String?]
 	
-	init(name: String?) {
+	init(name: String?, balls: [String?]) {
 		self.name = name
+		self.balls = balls
 	}
 	
 	func makeInputName() throws -> InputName {
 		try InputName(name: name)
+	}
+	
+	func makeBall() throws -> Ball {
+		try Ball(knockedDownPin: balls.remove(at: 0))
 	}
 }
