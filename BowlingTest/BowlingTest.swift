@@ -8,6 +8,8 @@
 import XCTest
 
 class BowlingTest: XCTestCase {
+	let resultView = StubResultView()
+	
 	func test_shouldBeStrikeWhenAllThePinsKnockedDownOnTheFirstBall() throws {
 		let frame = NormalFrame()
 		XCTAssertTrue(try frame.score(of: Ball(knockedDownPin: "10")) is Strike)
@@ -112,9 +114,17 @@ class BowlingTest: XCTestCase {
 		}
 	}
 	
+	func test_shouldPrintOutOfScoreBoardWhenTheBowlingGameIsStart() throws {
+		var bowlingGame = makeStubBowlingGame(byName: "abc", balls: ["-1"])
+		try bowlingGame.enterGame()
+		
+		XCTAssertEqual(StubResultView.Verify.showGameBoard, true)
+	}
+	
 	private func makeStubBowlingGame(byName name: String?, balls: [String?] = []) -> BowlingGame {
+		
 		let inputView = StubInputView(name: name, balls: balls)
-		let bowlingGame = BowlingGame(inputView: inputView)
+		let bowlingGame = BowlingGame(inputView: inputView, resultView: resultView)
 		return bowlingGame
 	}
 	
