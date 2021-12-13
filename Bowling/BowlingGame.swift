@@ -10,15 +10,17 @@ import Foundation
 final class BowlingGame {
 	private(set) var frames: [Frame] = [NormalFrame()]
 	let inputView: Inputtable
+	let resultView: Presentable
 	var playerName = ""
 	
-	init(inputView: Inputtable) {
+	init(inputView: Inputtable, resultView: Presentable) {
 		self.inputView = inputView
-		
+		self.resultView = resultView
 	}
 	
 	func enterGame() throws {
 		playerName = try inputView.inputedName().name
+		resultView.showGameBoard(of: playerName, frames: [])
 		try bowling()
 	}
 	
@@ -33,6 +35,7 @@ final class BowlingGame {
 	
 	private func bowling() throws {
 		play(with: try inputView.inputedBall())
+		resultView.showGameBoard(of: playerName, frames: frames)
 	}
 	
 	private func manage(of frame: Frame) throws {

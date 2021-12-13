@@ -115,14 +115,13 @@ class BowlingTest: XCTestCase {
 	}
 	
 	func test_shouldPrintOutOfScoreBoardWhenTheBowlingGameIsStart() throws {
-		var bowlingGame = makeStubBowlingGame(byName: "abc", balls: ["-1"])
+		let bowlingGame = makeStubBowlingGame(byName: "abc", balls: ["10","10","10","10","10","10","10","10","10","1","2"])
 		try bowlingGame.enterGame()
 		
 		XCTAssertEqual(StubResultView.Verify.showGameBoard, true)
 	}
 	
 	private func makeStubBowlingGame(byName name: String?, balls: [String?] = []) -> BowlingGame {
-		
 		let inputView = StubInputView(name: name, balls: balls)
 		let bowlingGame = BowlingGame(inputView: inputView, resultView: resultView)
 		return bowlingGame
@@ -133,7 +132,7 @@ class BowlingTest: XCTestCase {
 			partialResult + ["10"]
 		}
 		let inputView = StubInputView(name: "abc", balls: balls)
-		let bowlingGame = BowlingGame(inputView: inputView)
+		let bowlingGame = BowlingGame(inputView: inputView, resultView: resultView)
 		
 		return bowlingGame
 	}
