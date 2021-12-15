@@ -30,7 +30,8 @@ struct ResultView: Presentable {
 	}
 	
 	func occurError(error: BowlingError) {
-		print(error.errorDescription)
+		guard let errorMessage = error.errorDescription else { return }
+		print(errorMessage)
 	}
 	
 	private var headSection: String {
