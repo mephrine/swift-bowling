@@ -40,12 +40,12 @@ final class BowlingGame {
 	}
 	
 	private func bowling() throws {
-		play(with: try inputView.inputedBall())
-		resultView.showScoreOnTheGameBoard(of: playerName, frames: frames)
+		play(with: try inputView.inputedBall(of: currentFrame))
 	}
 	
 	private func manage(of frame: Frame) throws {
 		changeCurrentFrameTo(frame)
+		resultView.showScoreOnTheGameBoard(of: playerName, frames: frames)
 		if frame.isFinished {
 			try manageGame()
 			return
@@ -62,6 +62,10 @@ final class BowlingGame {
 			makeNewFrame()
 			try bowling()
 		}
+	}
+	
+	private var currentFrame: Int {
+		frames.count
 	}
 	
 	private func makeNewFrame() {
