@@ -35,7 +35,7 @@ NEXTSTEP with yagom-academy
 <br>
 
 - ResultView
-    - [ ] 현재 프레임 결과 출력
+    - [x] 현재 프레임 결과 출력
 
 <br>
 
@@ -56,7 +56,7 @@ NEXTSTEP with yagom-academy
     - [x] 플레이어 이름을 입력받는다.
     - [x] 투구를 입력받는다.
     - [x] 플레이어가 투구를 한다.
-    - [ ] 점수판에 현재 결과를 출력한다.
+    - [x] 점수판에 현재 결과를 출력한다.
 
 <br>
 
@@ -76,7 +76,7 @@ NEXTSTEP with yagom-academy
 
 - FinalFrame
     - [x] Strike or Spare면 3번째 투구를 한다.
-    - [ ] 모든 투구가 끝나면 게임 종료
+    - [x] 모든 투구가 끝나면 게임 종료
 
 <br>
 
