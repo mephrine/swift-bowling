@@ -23,4 +23,10 @@ final class StubResultView: Presentable {
 		showingCount += 1
 		Verify.showScoreOnTheGameBoard = true
 	}
+	
+	func clear() {
+		Verify.showScoreOnTheGameBoard = false
+		Verify.showGameBoardWhenGameStarts = false
+		showingCount = 0
+	}
 }

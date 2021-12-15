@@ -10,6 +10,10 @@ import XCTest
 class BowlingTest: XCTestCase {
 	let resultView = StubResultView()
 	
+	override func tearDownWithError() throws {
+		resultView.clear()
+	}
+	
 	func test_shouldBeStrikeWhenAllThePinsKnockedDownOnTheFirstBall() throws {
 		let frame = NormalFrame()
 		XCTAssertTrue(try frame.score(of: Ball(knockedDownPin: "10")) is Strike)
@@ -72,46 +76,45 @@ class BowlingTest: XCTestCase {
 	
 	func test_shouldThrowErrorWhenTheInputNameIsInvalid() throws {
 		var bowlingGame = makeStubBowlingGame(byName: "a")
-		XCTAssertThrowsError(try bowlingGame.enterGame()) { error in
-			XCTAssertEqual(error as! BowlingError, BowlingError.invalidName)
-		}
+		bowlingGame.enterGame()
+		XCTAssertEqual(resultView.occuredError, BowlingError.invalidName)
 		
+		resultView.clear()
 		bowlingGame = makeStubBowlingGame(byName: "")
-		XCTAssertThrowsError(try bowlingGame.enterGame()) { error in
-			XCTAssertEqual(error as! BowlingError, BowlingError.invalidName)
-		}
+		bowlingGame.enterGame()
+		XCTAssertEqual(resultView.occuredError, BowlingError.invalidName)
 		
+		resultView.clear()
 		bowlingGame = makeStubBowlingGame(byName: nil)
-		XCTAssertThrowsError(try bowlingGame.enterGame()) { error in
-			XCTAssertEqual(error as! BowlingError, BowlingError.invalidName)
-		}
-		
+		bowlingGame.enterGame()
+		XCTAssertEqual(resultView.occuredError, BowlingError.invalidName)
+				
+		resultView.clear()
 		bowlingGame = makeStubBowlingGame(byName: "abcd")
-		XCTAssertThrowsError(try bowlingGame.enterGame()) { error in
-			XCTAssertEqual(error as! BowlingError, BowlingError.invalidName)
-		}
+		bowlingGame.enterGame()
+		XCTAssertEqual(resultView.occuredError, BowlingError.invalidName)
+		
 	}
 	
 	func test_shouldThrowErrorWhenTheInputBallIsInvalid() throws {
 		var bowlingGame = makeStubBowlingGame(byName: "abc", balls: ["-1"])
-		XCTAssertThrowsError(try bowlingGame.enterGame()) { error in
-			XCTAssertEqual(error as! BowlingError, BowlingError.invalidBall)
-		}
+		bowlingGame.enterGame()
+		XCTAssertEqual(resultView.occuredError, BowlingError.invalidBall)
 		
+		resultView.clear()
 		bowlingGame = makeStubBowlingGame(byName: "abc", balls: [nil])
-		XCTAssertThrowsError(try bowlingGame.enterGame()) { error in
-			XCTAssertEqual(error as! BowlingError, BowlingError.invalidBall)
-		}
+		bowlingGame.enterGame()
+		XCTAssertEqual(resultView.occuredError, BowlingError.invalidBall)
 		
+		resultView.clear()
 		bowlingGame = makeStubBowlingGame(byName: "abc", balls: ["a"])
-		XCTAssertThrowsError(try bowlingGame.enterGame()) { error in
-			XCTAssertEqual(error as! BowlingError, BowlingError.invalidBall)
-		}
-		
+		bowlingGame.enterGame()
+		XCTAssertEqual(resultView.occuredError, BowlingError.invalidBall)
+
+		resultView.clear()
 		bowlingGame = makeStubBowlingGame(byName: "abc", balls: ["11"])
-		XCTAssertThrowsError(try bowlingGame.enterGame()) { error in
-			XCTAssertEqual(error as! BowlingError, BowlingError.invalidBall)
-		}
+		bowlingGame.enterGame()
+		XCTAssertEqual(resultView.occuredError, BowlingError.invalidBall)
 	}
 	
 	func test_shouldPrintOutOfScoreBoardWhenTheBowlingGameIsStart() throws {
