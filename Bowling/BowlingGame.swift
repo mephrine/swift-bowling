@@ -18,10 +18,15 @@ final class BowlingGame {
 		self.resultView = resultView
 	}
 	
-	func enterGame() throws {
-		playerName = try inputView.inputedName().name
-		resultView.showGameBoardWhenGameStarts(of: playerName)
-		try bowling()
+	func enterGame() {
+		do {
+			playerName = try inputView.inputedName().name
+			resultView.showGameBoardWhenGameStarts(of: playerName)
+			try bowling()
+		} catch {
+			guard let bowlingError = error as? BowlingError else { return }
+			resultView.occurError(error: bowlingError)
+		}
 	}
 	
 	func play(with ball: Ball) {
@@ -29,7 +34,8 @@ final class BowlingGame {
 			guard let currentFrame = try frames.last?.score(of: ball) else { return }
 			try manage(of: currentFrame)
 		} catch {
-			fatalError("Ball is invalid")
+			guard let bowlingError = error as? BowlingError else { return }
+			resultView.occurError(error: bowlingError)
 		}
 	}
 	

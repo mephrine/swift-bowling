@@ -10,6 +10,7 @@ import Foundation
 protocol Presentable {
 	func showGameBoardWhenGameStarts(of name: String)
 	func showScoreOnTheGameBoard(of name: String, frames: [Frame])
+	func occurError(error: BowlingError)
 }
 
 struct ResultView: Presentable {
@@ -26,6 +27,10 @@ struct ResultView: Presentable {
 	func showScoreOnTheGameBoard(of name: String, frames: [Frame]) {
 		print(headSection)
 		print(convertToBodySection(of: name, frames: frames))
+	}
+	
+	func occurError(error: BowlingError) {
+		print(error.errorDescription)
 	}
 	
 	private var headSection: String {

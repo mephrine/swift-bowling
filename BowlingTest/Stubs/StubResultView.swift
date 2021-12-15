@@ -9,6 +9,7 @@ import Foundation
 
 final class StubResultView: Presentable {
 	private(set) var showingCount = 0
+	private(set) var occuredError: BowlingError? = nil
 	
 	enum Verify {
 		static var showGameBoardWhenGameStarts = false
@@ -24,9 +25,14 @@ final class StubResultView: Presentable {
 		Verify.showScoreOnTheGameBoard = true
 	}
 	
+	func occurError(error: BowlingError) {
+		occuredError = error
+	}
+	
 	func clear() {
 		Verify.showScoreOnTheGameBoard = false
 		Verify.showGameBoardWhenGameStarts = false
 		showingCount = 0
+		occuredError = nil
 	}
 }
