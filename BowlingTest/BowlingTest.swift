@@ -125,7 +125,8 @@ class BowlingTest: XCTestCase {
 		let bowlingGame = makeStubBowlingGame(byName: "abc", balls: ["10","10","10","10","10","10","10","10","10","1","2"])
 		try bowlingGame.enterGame()
 		
-		XCTAssertEqual(StubResultView.Verify.showScoreOnTheGameBoard, 11)
+		XCTAssertEqual(StubResultView.Verify.showScoreOnTheGameBoard, true)
+		XCTAssertEqual(resultView.showingCount, 11)
 	}
 	
 	private func makeStubBowlingGame(byName name: String?, balls: [String?] = []) -> BowlingGame {

@@ -14,6 +14,14 @@ struct NormalFrame: Running {
 		self.balls = balls
 	}
 	
+	var mark: String {
+		let mark = balls
+			.map { $0.knockedDownPin }
+			.map(String.init)
+			.joined(separator: "|")
+		return " \(mark) "
+	}
+	
 	func score(of ball: Ball) throws -> Frame {
 		let balls = self.balls + [ball]
 		if balls.isStrike { return Strike.makeNewFrame(from: self, balls: balls) }

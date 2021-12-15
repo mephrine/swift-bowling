@@ -20,7 +20,7 @@ final class BowlingGame {
 	
 	func enterGame() throws {
 		playerName = try inputView.inputedName().name
-		resultView.showGameBoard(of: playerName, frames: [])
+		resultView.showGameBoardWhenGameStarts(of: playerName)
 		try bowling()
 	}
 	
@@ -35,7 +35,7 @@ final class BowlingGame {
 	
 	private func bowling() throws {
 		play(with: try inputView.inputedBall())
-		resultView.showGameBoard(of: playerName, frames: frames)
+		resultView.showScoreOnTheGameBoard(of: playerName, frames: frames)
 	}
 	
 	private func manage(of frame: Frame) throws {

@@ -8,28 +8,39 @@
 import Foundation
 
 protocol Presentable {
-	func showGameBoard(of name: String, frames: [Frame])
+	func showGameBoardWhenGameStarts(of name: String)
+	func showScoreOnTheGameBoard(of name: String, frames: [Frame])
 }
 
 struct ResultView: Presentable {
 	enum UI {
-		static let marginName: Int = 1
-		static let marginScore: Int = 2
-		static let seperator: String = "|"
+		static let marginLeading: Int = 2
+		static let seperator: String = " | "
 	}
 	
-	func showGameBoard(of name: String, frames: [Frame]) {
+	func showGameBoardWhenGameStarts(of name: String) {
 		print(headSection)
 		print(convertToBodySection(of: name))
 	}
 	
+	func showScoreOnTheGameBoard(of name: String, frames: [Frame]) {
+		print(headSection)
+		print(convertToBodySection(of: name, frames: frames))
+	}
+	
 	private var headSection: String {
-		let headerSection = ([" NAME "] + (1...10).map { String(format: "  %02d  ", $0)}).joined(separator: "|")
+		let headerSection = ([" NAME "] + (1...10).map { String(format: "  %02d  ", $0)}).joined(separator: UI.seperator)
 		return UI.seperator + headerSection + UI.seperator
 	}
 	
 	private func convertToBodySection(of name: String) -> String {
-		let bodySection = ([" \(name) "] + (1...10).map { String(format: "  %02d  ", $0)}).joined(separator: "|")
+		let bodySection = ([" \(name) "] + (1...10).map { _ in  "  " }).joined(separator: UI.seperator)
+		return UI.seperator + bodySection + UI.seperator
+	}
+	
+	private func convertToBodySection(of name: String, frames: [Frame]) -> String {
+		let bodySection = ([" \(name) "] + frames.map { $0.mark })
+												.joined(separator: UI.seperator)
 		return UI.seperator + bodySection + UI.seperator
 	}
 }

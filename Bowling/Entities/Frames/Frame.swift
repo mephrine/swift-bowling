@@ -10,6 +10,7 @@ import Foundation
 protocol Frame {
 	var balls: [Ball] { get }
 	var isFinished: Bool { get }
+	var mark: String { get }
 	func score(of ball: Ball) throws -> Frame
 	static func makeNewFrame(from currentframe: Frame, balls: [Ball]) -> Self
 }

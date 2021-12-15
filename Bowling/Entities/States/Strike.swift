@@ -10,6 +10,7 @@ import Foundation
 struct Strike: Finished {
 	let balls: [Ball]
 	let isFinished: Bool
+	let mark: String = " X  "
 	
 	static func makeNewFrame(from currentframe: Frame, balls: [Ball]) -> Strike {
 		Strike(balls: balls, isFinished: isFinished(frame: currentframe, balls: balls))

@@ -7,12 +7,20 @@
 
 import Foundation
 
-struct StubResultView: Presentable {
+final class StubResultView: Presentable {
+	private(set) var showingCount = 0
+	
 	enum Verify {
-		static var showGameBoard = false
+		static var showGameBoardWhenGameStarts = false
+		static var showScoreOnTheGameBoard = false
 	}
 	
-	func showGameBoard(of name: String, frames: [Frame]) {
-		Verify.showGameBoard = true
+	func showGameBoardWhenGameStarts(of name: String) {
+		Verify.showGameBoardWhenGameStarts = true
+	}
+	
+	func showScoreOnTheGameBoard(of name: String, frames: [Frame]) {
+		showingCount += 1
+		Verify.showScoreOnTheGameBoard = true
 	}
 }
