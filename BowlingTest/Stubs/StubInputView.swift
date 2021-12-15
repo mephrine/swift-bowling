@@ -20,7 +20,7 @@ final class StubInputView: Inputtable {
 		try InputName(name: name)
 	}
 	
-	func makeBall() throws -> Ball {
+	func makeBall(of currentFrame: Int) throws -> Ball {
 		try Ball(knockedDownPin: balls.remove(at: 0))
 	}
 }
