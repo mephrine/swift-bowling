@@ -98,14 +98,14 @@ class BowlingTest: XCTestCase {
 	
 	func test_shouldPrintOutOfScoreBoardWhenTheBowlingGameIsStart() throws {
 		let bowlingGame = makeStubBowlingGame(byName: "abc", balls: ["10","10","10","10","10","10","10","10","10","1","2"])
-		try bowlingGame.enterGame()
+		bowlingGame.enterGame()
 		
 		XCTAssertEqual(StubResultView.Verify.showGameBoardWhenGameStarts, true)
 	}
 	
 	func test_shouldPrintOutTheNumberOfBallsOnTheScoreBoardWhenTheBallIsBowled() throws {
 		let bowlingGame = makeStubBowlingGame(byName: "abc", balls: ["10","10","10","10","10","10","10","10","10","1","2"])
-		try bowlingGame.enterGame()
+		bowlingGame.enterGame()
 		
 		XCTAssertEqual(StubResultView.Verify.showScoreOnTheGameBoard, true)
 		XCTAssertEqual(resultView.showingCount, 11)
