@@ -40,39 +40,24 @@ class BowlingTest: XCTestCase {
 		XCTAssertTrue(try secondBall.score(of: Ball(knockedDownPin: "0")) is Gutter)
 	}
 	
-//	func test_shouldBeFrame2WhenFrame1Ends() throws {
-//		let inputView = StubInputView(name: "abc", balls: ["0","0"])
-//		let bowlingGame = BowlingGame(inputView: inputView)
-//
-//		XCTAssertTrue(bowlingGame.frames.count == 2)
-//	}
-//	
-//	func test_shouldBeFinalFrameWhenFrame9Ends() throws {
-//		let bowlingGame = makeBowlingGameOfFinalFrame()
-//		try bowlingGame.enterGame()
-//
-//		XCTAssertTrue(bowlingGame.frames.last is FinalFrame)
-//	}
-//
-//	func test_shouldGet3BallsWhenFinalFrameContainsStrikeOrSpare() throws {
-//		var bowlingGame = makeBowlingGameOfFinalFrame()
-//		try bowlingGame.enterGame()
-//
-//		bowlingGame.play(with: try Ball(knockedDownPin: "10"))
-//		bowlingGame.play(with: try Ball(knockedDownPin: "10"))
-//		bowlingGame.play(with: try Ball(knockedDownPin: "10"))
-//
-//		XCTAssertTrue(bowlingGame.frames.last?.balls.count == 3)
-//
-//		bowlingGame = makeBowlingGameOfFinalFrame()
-//		try bowlingGame.enterGame()
-//
-//		bowlingGame.play(with: try Ball(knockedDownPin: "1"))
-//		bowlingGame.play(with: try Ball(knockedDownPin: "9"))
-//		bowlingGame.play(with: try Ball(knockedDownPin: "1"))
-//
-//		XCTAssertTrue(bowlingGame.frames.last?.balls.count == 3)
-//	}
+	func test_shouldBeFinalFrameWhenFrame9Ends() throws {
+		let bowlingGame = makeBowlingGameOfFinalFrame()
+		try bowlingGame.enterGame()
+
+		XCTAssertTrue(bowlingGame.frames.last is FinalFrame)
+	}
+
+	func test_shouldGet3BallsWhenFinalFrameContainsStrikeOrSpare() throws {
+		let bowlingGame = makeStubBowlingGame(byName: "abc", balls: ["10","10","10","10","10","10","10","10","10","10","10","10"])
+		try bowlingGame.enterGame()
+
+		XCTAssertTrue(bowlingGame.frames.last?.balls.count == 3)
+
+		bowlingGame = makeStubBowlingGame(byName: "abc", balls: ["10","10","10","10","10","10","10","10","10","1","9","3"])
+		try bowlingGame.enterGame()
+
+		XCTAssertTrue(bowlingGame.frames.last?.balls.count == 3)
+	}
 	
 	func test_shouldThrowErrorWhenTheInputNameIsInvalid() throws {
 		var bowlingGame = makeStubBowlingGame(byName: "a")
