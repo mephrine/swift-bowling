@@ -35,6 +35,12 @@ extension Ball {
 }
 
 extension Array where Element == Ball {
+	var sumOfBalls: Int {
+		self.reduce(0) { result, ball in
+			result + ball.knockedDownPin
+		}
+	}
+	
 	var convertToScoreMark: String {
 		self.map { ball in
 			ball.convertToMark
@@ -47,31 +53,19 @@ extension Array where Element == Ball {
 	
 	var isSpare: Bool {
 		guard isSecondFrame else { return false }
-		let score = self
-			.map { $0.knockedDownPin }
-			.reduce(0) { result, ball in
-				result + ball
-			}
+		let score = self.sumOfBalls
 		return score == BowlingOption.numberOfPins
 	}
 	
 	var isMiss: Bool {
 		guard isSecondFrame else { return false }
-		let score = self
-			.map { $0.knockedDownPin }
-			.reduce(0) { result, ball in
-				result + ball
-			}
+		let score = self.sumOfBalls
 		return score < BowlingOption.numberOfPins && score > 0
 	}
 	
 	var isGutter: Bool {
 		guard isSecondFrame else { return false }
-		let score = self
-			.map { $0.knockedDownPin }
-			.reduce(0) { result, ball in
-				result + ball
-			}
+		let score = self.sumOfBalls
 		return score == 0
 	}
 	

@@ -42,12 +42,13 @@ class BowlingTest: XCTestCase {
 
 	func test_shouldGet3BallsWhenFinalFrameContainsStrikeOrSpare() throws {
 		var bowlingGame = makeStubBowlingGame(byName: "abc", balls: ["10","10","10","10","10","10","10","10","10","10","10","10"])
-		try bowlingGame.enterGame()
+		bowlingGame.enterGame()
 
 		XCTAssertTrue(bowlingGame.frames.last?.balls.count == 3)
+		
 
 		bowlingGame = makeStubBowlingGame(byName: "abc", balls: ["10","10","10","10","10","10","10","10","10","1","9","3"])
-		try bowlingGame.enterGame()
+		bowlingGame.enterGame()
 
 		XCTAssertTrue(bowlingGame.frames.last?.balls.count == 3)
 	}
@@ -112,7 +113,7 @@ class BowlingTest: XCTestCase {
 	
 	func test_shouldPrintOutOverTheScoreErrorWhenTheSumOfTheKnockDownPinsIsMoreThan10() {
 		let bowlingGame = makeStubBowlingGame(byName: "abc", balls: ["2","10","10","10","10","10","10","10","10","1"])
-		try bowlingGame.enterGame()
+		bowlingGame.enterGame()
 		
 		XCTAssertEqual(resultView.occuredError, BowlingError.exceedMaxPin)
 	}

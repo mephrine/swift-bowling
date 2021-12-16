@@ -19,6 +19,9 @@ protocol Frame {
 extension Frame {
 	func score(of ball: Ball) throws -> Frame {
 		let balls = self.balls + [ball]
+		guard balls.sumOfBalls <= BowlingOption.numberOfPins else {
+			throw BowlingError.exceedMaxPin
+		}
 		return Self.makeNewFrame(byBalls: balls, marks: marks)
 	}
 }
@@ -62,6 +65,7 @@ extension Final {
 			marks.append("X")
 			return FinalFrameStrike.makeNewFrame(byBalls: balls, marks: marks)
 		}
+		
 		if balls.isSpare {
 			guard let firstBall = balls.first else {
 				return FinalFrameSpare.makeNewFrame(byBalls: balls, marks: marks)
@@ -70,10 +74,16 @@ extension Final {
 			return FinalFrameSpare.makeNewFrame(byBalls: balls, marks: marks)
 		}
 		if balls.isMiss {
+			guard balls.sumOfBalls <= BowlingOption.numberOfPins else {
+				throw BowlingError.exceedMaxPin
+			}
 			marks = [balls.convertToScoreMark]
 			return Miss.makeNewFrame(byBalls: balls, marks: self.marks)
 		}
 		if balls.isGutter {
+			guard balls.sumOfBalls <= BowlingOption.numberOfPins else {
+				throw BowlingError.exceedMaxPin
+			}
 			marks = [balls.convertToScoreMark]
 			return Gutter.makeNewFrame(byBalls: balls, marks: self.marks)
 		}

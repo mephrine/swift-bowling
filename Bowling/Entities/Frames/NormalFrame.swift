@@ -15,6 +15,9 @@ struct NormalFrame: Running {
 	
 	func score(of ball: Ball) throws -> Frame {
 		let balls = self.balls + [ball]
+		guard balls.sumOfBalls <= BowlingOption.numberOfPins else {
+			throw BowlingError.exceedMaxPin
+		}
 		if balls.isStrike { return NormalFrameStrike.makeNewFrame(byBalls: balls, marks: self.marks) }
 		if balls.isSpare { return NormalFrameSpare.makeNewFrame(byBalls: balls, marks: self.marks) }
 		if balls.isMiss { return Miss.makeNewFrame(byBalls: balls, marks: self.marks) }
