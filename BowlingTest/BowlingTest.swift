@@ -110,6 +110,13 @@ class BowlingTest: XCTestCase {
 		XCTAssertEqual(resultView.showingCount, 11)
 	}
 	
+	func test_shouldPrintOutOverTheScoreErrorWhenTheSumOfTheKnockDownPinsIsMoreThan10() {
+		let bowlingGame = makeStubBowlingGame(byName: "abc", balls: ["2","10","10","10","10","10","10","10","10","1"])
+		try bowlingGame.enterGame()
+		
+		XCTAssertEqual(resultView.occuredError, BowlingError.exceedMaxPin)
+	}
+	
 	private func makeStubBowlingGame(byName name: String?, balls: [String?] = []) -> BowlingGame {
 		let inputView = StubInputView(name: name, balls: balls)
 		let bowlingGame = BowlingGame(inputView: inputView, resultView: resultView)
