@@ -45,7 +45,7 @@ struct ResultView: Presentable {
 	}
 	
 	private func convertToBodySection(of name: String, frames: [Frame]) -> String {
-		let bodySection = ([" \(name) "] + frames.map { $0.mark })
+		let bodySection = ([" \(name) "] + frames.map { $0.scoreMark })
 												.joined(separator: UI.seperator)
 		return UI.seperator + bodySection + UI.seperator
 	}

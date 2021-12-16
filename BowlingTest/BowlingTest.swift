@@ -16,14 +16,14 @@ class BowlingTest: XCTestCase {
 	
 	func test_shouldBeStrikeWhenAllThePinsKnockedDownOnTheFirstBall() throws {
 		let frame = NormalFrame()
-		XCTAssertTrue(try frame.score(of: Ball(knockedDownPin: "10")) is Strike)
+		XCTAssertTrue(try frame.score(of: Ball(knockedDownPin: "10")) is NormalFrameStrike)
 	}
 	
 	func test_shouldBeSpareWhenAllThePinsKnockedDownOnTheSecondBall() throws {
 		let firstBall: Frame = NormalFrame()
 		let secondBall = try firstBall.score(of: Ball(knockedDownPin: "7"))
 		
-		XCTAssertTrue(try secondBall.score(of: Ball(knockedDownPin: "3")) is Spare)
+		XCTAssertTrue(try secondBall.score(of: Ball(knockedDownPin: "3")) is NormalFrameSpare)
 	}
 	
 	func test_shouldBeMissWhenAllThePinsnNotKnockedDownOnTheSecondBall() throws {
@@ -39,16 +39,9 @@ class BowlingTest: XCTestCase {
 		
 		XCTAssertTrue(try secondBall.score(of: Ball(knockedDownPin: "0")) is Gutter)
 	}
-	
-	func test_shouldBeFinalFrameWhenFrame9Ends() throws {
-		let bowlingGame = makeBowlingGameOfFinalFrame()
-		try bowlingGame.enterGame()
-
-		XCTAssertTrue(bowlingGame.frames.last is FinalFrame)
-	}
 
 	func test_shouldGet3BallsWhenFinalFrameContainsStrikeOrSpare() throws {
-		let bowlingGame = makeStubBowlingGame(byName: "abc", balls: ["10","10","10","10","10","10","10","10","10","10","10","10"])
+		var bowlingGame = makeStubBowlingGame(byName: "abc", balls: ["10","10","10","10","10","10","10","10","10","10","10","10"])
 		try bowlingGame.enterGame()
 
 		XCTAssertTrue(bowlingGame.frames.last?.balls.count == 3)

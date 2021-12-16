@@ -6,5 +6,8 @@
 
 import Foundation
 
-print("Hello, World!")
+let inputView = InputView()
+let resultView = ResultView()
+let bowlingGame = BowlingGame(inputView: inputView, resultView: resultView)
+bowlingGame.enterGame()
 

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		514E14F7276B1BF5007A0D55 /* FinalFrameStrike.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51997F4A276AE2E900CC654D /* FinalFrameStrike.swift */; };
+		514E14F8276B1BF7007A0D55 /* FinalFrameSpare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51997F4C276AE2F400CC654D /* FinalFrameSpare.swift */; };
+		51997F4B276AE2E900CC654D /* FinalFrameStrike.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51997F4A276AE2E900CC654D /* FinalFrameStrike.swift */; };
+		51997F4D276AE2F400CC654D /* FinalFrameSpare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51997F4C276AE2F400CC654D /* FinalFrameSpare.swift */; };
 		51A5FBE8276247F500B7D4BA /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A5FBE7276247F500B7D4BA /* InputView.swift */; };
 		51A5FBEB27624B9E00B7D4BA /* BowlingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A5FBEA27624B9E00B7D4BA /* BowlingError.swift */; };
 		51A5FBEC27624BB600B7D4BA /* BowlingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A5FBEA27624B9E00B7D4BA /* BowlingError.swift */; };
@@ -27,14 +31,14 @@
 		51B2AF5B275A7DAE00A2640F /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B2AF59275A7D6E00A2640F /* Array+Extension.swift */; };
 		51C1D340275910E600252C73 /* Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C1D33F275910E600252C73 /* Frame.swift */; };
 		51C1D342275910EF00252C73 /* NormalFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C1D341275910EF00252C73 /* NormalFrame.swift */; };
-		51C1D344275910FC00252C73 /* Strike.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C1D343275910FC00252C73 /* Strike.swift */; };
+		51C1D344275910FC00252C73 /* NormalFrameStrike.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C1D343275910FC00252C73 /* NormalFrameStrike.swift */; };
 		51C1D3462759111E00252C73 /* Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C1D33F275910E600252C73 /* Frame.swift */; };
-		51C1D3472759112000252C73 /* Strike.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C1D343275910FC00252C73 /* Strike.swift */; };
+		51C1D3472759112000252C73 /* NormalFrameStrike.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C1D343275910FC00252C73 /* NormalFrameStrike.swift */; };
 		51C1D3482759112300252C73 /* NormalFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C1D341275910EF00252C73 /* NormalFrame.swift */; };
 		51C1D34A275913E000252C73 /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C1D349275913E000252C73 /* Ball.swift */; };
 		51C1D34B2759178C00252C73 /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C1D349275913E000252C73 /* Ball.swift */; };
-		51C1D34D27591AA800252C73 /* Spare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C1D34C27591AA800252C73 /* Spare.swift */; };
-		51C1D34E27591AAE00252C73 /* Spare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C1D34C27591AA800252C73 /* Spare.swift */; };
+		51C1D34D27591AA800252C73 /* NormalFrameSpare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C1D34C27591AA800252C73 /* NormalFrameSpare.swift */; };
+		51C1D34E27591AAE00252C73 /* NormalFrameSpare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C1D34C27591AA800252C73 /* NormalFrameSpare.swift */; };
 		51C1D35127591B7C00252C73 /* BowlingOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C1D35027591B7C00252C73 /* BowlingOption.swift */; };
 		51C1D35227591B7E00252C73 /* BowlingOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C1D35027591B7C00252C73 /* BowlingOption.swift */; };
 		51C6C63A275E406D001AB36C /* FinalFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C6C639275E406D001AB36C /* FinalFrame.swift */; };
@@ -56,6 +60,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		51997F4A276AE2E900CC654D /* FinalFrameStrike.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalFrameStrike.swift; sourceTree = "<group>"; };
+		51997F4C276AE2F400CC654D /* FinalFrameSpare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalFrameSpare.swift; sourceTree = "<group>"; };
 		51A5FBE7276247F500B7D4BA /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 		51A5FBEA27624B9E00B7D4BA /* BowlingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BowlingError.swift; sourceTree = "<group>"; };
 		51A5FBED27624CBA00B7D4BA /* InputName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputName.swift; sourceTree = "<group>"; };
@@ -68,9 +74,9 @@
 		51B2AF59275A7D6E00A2640F /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		51C1D33F275910E600252C73 /* Frame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Frame.swift; sourceTree = "<group>"; };
 		51C1D341275910EF00252C73 /* NormalFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalFrame.swift; sourceTree = "<group>"; };
-		51C1D343275910FC00252C73 /* Strike.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strike.swift; sourceTree = "<group>"; };
+		51C1D343275910FC00252C73 /* NormalFrameStrike.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalFrameStrike.swift; sourceTree = "<group>"; };
 		51C1D349275913E000252C73 /* Ball.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
-		51C1D34C27591AA800252C73 /* Spare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spare.swift; sourceTree = "<group>"; };
+		51C1D34C27591AA800252C73 /* NormalFrameSpare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalFrameSpare.swift; sourceTree = "<group>"; };
 		51C1D35027591B7C00252C73 /* BowlingOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BowlingOption.swift; sourceTree = "<group>"; };
 		51C6C639275E406D001AB36C /* FinalFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalFrame.swift; sourceTree = "<group>"; };
 		88C8B83F27572DCE009DA032 /* BowlingTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BowlingTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -163,10 +169,12 @@
 		51C6C638275E3FE5001AB36C /* States */ = {
 			isa = PBXGroup;
 			children = (
-				51C1D343275910FC00252C73 /* Strike.swift */,
-				51C1D34C27591AA800252C73 /* Spare.swift */,
+				51C1D343275910FC00252C73 /* NormalFrameStrike.swift */,
+				51C1D34C27591AA800252C73 /* NormalFrameSpare.swift */,
 				51B2AF55275A79F800A2640F /* Miss.swift */,
 				51B296F8275CF567008AA79A /* Gutter.swift */,
+				51997F4A276AE2E900CC654D /* FinalFrameStrike.swift */,
+				51997F4C276AE2F400CC654D /* FinalFrameSpare.swift */,
 			);
 			path = States;
 			sourceTree = "<group>";
@@ -206,8 +214,8 @@
 				51B2AF58275A7D4200A2640F /* Extensions */,
 				51C1D34F27591B7100252C73 /* Options */,
 				51C1D3452759110000252C73 /* Entities */,
-				C7640415274F2F5100A223B5 /* main.swift */,
 				51B296FB275D0397008AA79A /* BowlingGame.swift */,
+				C7640415274F2F5100A223B5 /* main.swift */,
 			);
 			path = Bowling;
 			sourceTree = "<group>";
@@ -305,19 +313,21 @@
 				51C1D3482759112300252C73 /* NormalFrame.swift in Sources */,
 				51B2AF57275A7A0300A2640F /* Miss.swift in Sources */,
 				51AF5FA92767888500D0AA39 /* StubResultView.swift in Sources */,
+				514E14F8276B1BF7007A0D55 /* FinalFrameSpare.swift in Sources */,
 				51A5FBEF27624D2E00B7D4BA /* InputName.swift in Sources */,
-				51C1D34E27591AAE00252C73 /* Spare.swift in Sources */,
+				51C1D34E27591AAE00252C73 /* NormalFrameSpare.swift in Sources */,
 				51B2AF5B275A7DAE00A2640F /* Array+Extension.swift in Sources */,
 				51A5FBEC27624BB600B7D4BA /* BowlingError.swift in Sources */,
 				51A5FBF42762513600B7D4BA /* StubInputView.swift in Sources */,
 				88C8B84227572DCE009DA032 /* BowlingTest.swift in Sources */,
 				51C1D34B2759178C00252C73 /* Ball.swift in Sources */,
 				51B296FA275CF5FC008AA79A /* Gutter.swift in Sources */,
-				51C1D3472759112000252C73 /* Strike.swift in Sources */,
+				51C1D3472759112000252C73 /* NormalFrameStrike.swift in Sources */,
 				51C1D3462759111E00252C73 /* Frame.swift in Sources */,
 				51AF5FA72767883800D0AA39 /* ResultView.swift in Sources */,
 				51A5FBF127624F6C00B7D4BA /* InputView.swift in Sources */,
 				51B296FD275D03A6008AA79A /* BowlingGame.swift in Sources */,
+				514E14F7276B1BF5007A0D55 /* FinalFrameStrike.swift in Sources */,
 				51C1D35227591B7E00252C73 /* BowlingOption.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -326,17 +336,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51997F4D276AE2F400CC654D /* FinalFrameSpare.swift in Sources */,
 				51A5FBE8276247F500B7D4BA /* InputView.swift in Sources */,
 				51C6C63A275E406D001AB36C /* FinalFrame.swift in Sources */,
 				51A5FBEE27624CBA00B7D4BA /* InputName.swift in Sources */,
 				C7640416274F2F5100A223B5 /* main.swift in Sources */,
 				51B2AF56275A79F800A2640F /* Miss.swift in Sources */,
 				51AF5FA627677BC900D0AA39 /* ResultView.swift in Sources */,
-				51C1D34D27591AA800252C73 /* Spare.swift in Sources */,
+				51C1D34D27591AA800252C73 /* NormalFrameSpare.swift in Sources */,
 				51B2AF5A275A7D6E00A2640F /* Array+Extension.swift in Sources */,
-				51C1D344275910FC00252C73 /* Strike.swift in Sources */,
+				51C1D344275910FC00252C73 /* NormalFrameStrike.swift in Sources */,
 				51A5FBEB27624B9E00B7D4BA /* BowlingError.swift in Sources */,
 				51C1D34A275913E000252C73 /* Ball.swift in Sources */,
+				51997F4B276AE2E900CC654D /* FinalFrameStrike.swift in Sources */,
 				51B296F9275CF567008AA79A /* Gutter.swift in Sources */,
 				51C1D340275910E600252C73 /* Frame.swift in Sources */,
 				51C1D342275910EF00252C73 /* NormalFrame.swift in Sources */,
