@@ -32,7 +32,7 @@ protocol Running: Frame {
 extension Running {
 	var isFinished: Bool { false }
 	var marks: [String] { [] }
-	var scoreMark: String { " \(balls.convertToScoreMark) " }
+	var scoreMark: String { "  \(balls.convertToScoreMark)" }
 }
 
 protocol Finished: Frame {
@@ -40,7 +40,7 @@ protocol Finished: Frame {
 
 extension Finished {
 	var marks: [String] { [] }
-	var scoreMark: String { " \(balls.convertToScoreMark) " }
+	var scoreMark: String { "  \(balls.convertToScoreMark)" }
 }
 
 protocol Final: Frame {

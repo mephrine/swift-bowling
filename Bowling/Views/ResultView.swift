@@ -40,13 +40,26 @@ struct ResultView: Presentable {
 	}
 	
 	private func convertToBodySection(of name: String) -> String {
-		let bodySection = ([" \(name) "] + (1...10).map { _ in  "  " }).joined(separator: UI.seperator)
+		let bodySection = ([" \(name)  "] + (1...10).map { _ in "      " }).joined(separator: UI.seperator)
 		return UI.seperator + bodySection + UI.seperator
 	}
 	
+	//
 	private func convertToBodySection(of name: String, frames: [Frame]) -> String {
-		let bodySection = ([" \(name) "] + frames.map { $0.scoreMark })
-												.joined(separator: UI.seperator)
+		let bodySection = ([" \(name)"] + frames.map { $0.scoreMark })
+			.map { $0.fillEmptySpace }
+			.joined(separator: UI.seperator)
 		return UI.seperator + bodySection + UI.seperator
+	}
+	
+	
+}
+
+fileprivate extension String {
+	var fillEmptySpace: String {
+		if self.count < 6 {
+			return (self + " ").fillEmptySpace
+		}
+		return self
 	}
 }

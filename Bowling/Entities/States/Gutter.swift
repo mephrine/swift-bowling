@@ -10,7 +10,7 @@ import Foundation
 struct Gutter: Finished {
 	let balls: [Ball]
 	let isFinished: Bool
-	let scoreMark: String = "-"
+	let scoreMark: String = "  -"
 	
 	static func makeNewFrame(byBalls balls: [Ball], marks: [String]) -> Gutter {
 		Gutter(balls: balls, isFinished: true)
