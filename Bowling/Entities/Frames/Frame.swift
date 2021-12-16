@@ -60,34 +60,48 @@ extension Final {
 	
 	func score(of ball: Ball) throws -> Frame {
 		let balls = self.balls + [ball]
+		if ball.isStrike { return makeStrike(by: balls, marks: marks) }
+		if balls.isSpare { return makeSpare(by: balls, marks: marks) }
+		if balls.isMiss { return try makeMiss(by: balls) }
+		if balls.isGutter { return try makeGutter(by: balls) }
+		return makeFinalFrame(by: balls, currentMarks: marks)
+	}
+	
+	func makeStrike(by balls: [Ball], marks: [String]) -> FinalFrameStrike {
 		var marks = self.marks
-		if ball.isStrike {
-			marks.append("X")
-			return FinalFrameStrike.makeNewFrame(byBalls: balls, marks: marks)
-		}
-		
-		if balls.isSpare {
-			guard let firstBall = balls.first else {
-				return FinalFrameSpare.makeNewFrame(byBalls: balls, marks: marks)
-			}
-			marks = ["\(firstBall.knockedDownPin)|/"]
+		marks.append("X")
+		return FinalFrameStrike.makeNewFrame(byBalls: balls, marks: marks)
+	}
+	
+	func makeSpare(by balls: [Ball], marks: [String]) -> FinalFrameSpare {
+		guard let firstBall = balls.first else {
 			return FinalFrameSpare.makeNewFrame(byBalls: balls, marks: marks)
 		}
-		if balls.isMiss {
-			guard balls.sumOfBalls <= BowlingOption.numberOfPins else {
-				throw BowlingError.exceedMaxPin
-			}
-			marks = [balls.convertToScoreMark]
-			return Miss.makeNewFrame(byBalls: balls, marks: self.marks)
+		var marks = self.marks
+		marks = ["\(firstBall.knockedDownPin)|/"]
+		return FinalFrameSpare.makeNewFrame(byBalls: balls, marks: marks)
+	}
+	
+	func makeMiss(by balls: [Ball]) throws -> Miss {
+		guard balls.sumOfBalls <= BowlingOption.numberOfPins else {
+			throw BowlingError.exceedMaxPin
 		}
-		if balls.isGutter {
-			guard balls.sumOfBalls <= BowlingOption.numberOfPins else {
-				throw BowlingError.exceedMaxPin
-			}
-			marks = [balls.convertToScoreMark]
-			return Gutter.makeNewFrame(byBalls: balls, marks: self.marks)
+		let marks =  [balls.convertToScoreMark]
+		return Miss.makeNewFrame(byBalls: balls, marks: marks)
+	}
+	
+	func makeGutter(by balls: [Ball]) throws -> Gutter {
+		guard balls.sumOfBalls <= BowlingOption.numberOfPins else {
+			throw BowlingError.exceedMaxPin
 		}
-		marks.append(ball.convertToMark)
-		return Self.makeNewFrame(byBalls: balls, marks: marks)
+		let marks = [balls.convertToScoreMark]
+		return Gutter.makeNewFrame(byBalls: balls, marks: marks)
+	}
+	
+	func makeFinalFrame(by balls: [Ball], currentMarks: [String]) -> FinalFrame {
+		var marks = currentMarks
+		guard let currentBowlingBall = balls.last else { return FinalFrame.makeNewFrame(byBalls: balls, marks: currentMarks) }
+		marks.append(currentBowlingBall.convertToMark)
+		return FinalFrame.makeNewFrame(byBalls: balls, marks: marks)
 	}
 }
